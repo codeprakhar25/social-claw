@@ -52,20 +52,22 @@ export default async function Home() {
         <section className="glass-card overflow-hidden p-7 md:p-12">
           <div className="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
-              <div className="reveal inline-flex w-fit items-center gap-2 rounded-full border border-[#1e223033] bg-white px-3 py-2">
-                <Image
-                  src="/social-claw-mark.svg"
-                  alt="Social Claw logo"
-                  width={24}
-                  height={24}
-                />
-                <span className="display text-sm font-semibold tracking-wide">
-                  Social Claw
-                </span>
+              <div className="reveal flex flex-wrap items-center gap-2">
+                <div className="inline-flex h-10 w-fit items-center gap-2 rounded-full border border-[#1e223033] bg-white px-3">
+                  <Image
+                    src="/social-claw-mark.svg"
+                    alt="Social Claw logo"
+                    width={24}
+                    height={24}
+                  />
+                  <span className="display text-sm font-semibold leading-none tracking-wide">
+                    Social Claw
+                  </span>
+                </div>
+                <p className="inline-flex h-10 w-fit items-center rounded-full border border-[#1e223033] bg-[#fff6e8] px-4 text-xs font-semibold uppercase leading-none tracking-[0.17em] text-[#313542]">
+                  Launching Soon
+                </p>
               </div>
-              <p className="reveal inline-flex w-fit items-center rounded-full border border-[#1e223033] bg-[#fff6e8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.17em] text-[#313542]">
-                Launching Soon
-              </p>
               <h1
                 className="display reveal max-w-2xl text-4xl leading-[1.05] tracking-tight md:text-6xl"
                 data-delay="1"
