@@ -1,64 +1,192 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+  FaArrowRight,
+  FaBoltLightning,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaRedditAlien,
+  FaSliders,
+  FaTelegram,
+  FaXTwitter,
+} from "react-icons/fa6";
+
+const WAITLIST_URL = "https://tally.so/r/waitlist-placeholder";
+const DEMO_EMBED_URL = "https://www.youtube.com/embed/ysz5S6PUM-U";
+
+const platforms = [
+  { name: "X (Twitter)", icon: FaXTwitter },
+  { name: "LinkedIn", icon: FaLinkedinIn },
+  { name: "Reddit", icon: FaRedditAlien },
+  { name: "Instagram", icon: FaInstagram },
+  { name: "Facebook", icon: FaFacebookF },
+];
+
+const valueItems = [
+  {
+    title: "Post from Telegram in seconds",
+    description:
+      "Trigger single or multi-platform publishing without opening five different dashboards.",
+    icon: FaTelegram,
+  },
+  {
+    title: "Flexible control with OpenClaw",
+    description:
+      "Write once, adapt per channel, and schedule in the format your audience expects.",
+    icon: FaSliders,
+  },
+  {
+    title: "Save founder and team time",
+    description:
+      "Batch your content flow and ship consistently while staying focused on product work.",
+    icon: FaBoltLightning,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="landing-grid min-h-screen py-8 md:py-12">
+      <main className="shell space-y-10 md:space-y-16">
+        <section className="glass-card overflow-hidden p-7 md:p-12">
+          <div className="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-6">
+              <p className="reveal inline-flex w-fit items-center rounded-full border border-[#1e223033] bg-[#fff6e8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.17em] text-[#313542]">
+                Launching Soon
+              </p>
+              <h1
+                className="display reveal max-w-2xl text-4xl leading-[1.05] tracking-tight md:text-6xl"
+                data-delay="1"
+              >
+                Control your social media from Telegram with OpenClaw
+              </h1>
+              <p className="reveal max-w-xl text-base leading-relaxed text-[#2f3442] md:text-lg" data-delay="2">
+                Plan, customize, and post across platforms from one chat flow.
+                Built to save you time while giving full flexibility over your
+                content output.
+              </p>
+              <div className="reveal flex flex-wrap gap-3 pt-1" data-delay="3">
+                <a
+                  href={WAITLIST_URL}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#1d202b] bg-[#1d202b] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#ec5d2a]"
+                >
+                  Join Waitlist <FaArrowRight aria-hidden="true" />
+                </a>
+                <a
+                  href="#demo"
+                  className="inline-flex items-center rounded-full border border-[#1d202b33] bg-white px-6 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-[#1d202b]"
+                >
+                  Watch Demo
+                </a>
+              </div>
+            </div>
+
+            <div className="reveal relative" data-delay="2">
+              <div className="float-hero glass-card relative mx-auto max-w-md overflow-hidden p-4">
+                <Image
+                  src="/hero-social.svg"
+                  alt="Illustration showing connected social media publishing workflows"
+                  width={940}
+                  height={540}
+                  priority
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="demo" className="glass-card p-5 md:p-8">
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <h2 className="display text-2xl md:text-3xl">Demo Showcase</h2>
+            <span className="rounded-full border border-[#1d202b33] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">
+              Placeholder Embed
+            </span>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl border border-[#1d202b22] bg-black">
+            <div className="aspect-video w-full">
+              <iframe
+                src={DEMO_EMBED_URL}
+                title="OpenClaw social manager demo"
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
+          <div className="glass-card p-6 md:p-8">
+            <h2 className="display text-2xl md:text-3xl">Supported Platforms</h2>
+            <p className="mt-2 max-w-2xl text-sm text-[#313542] md:text-base">
+              Publish content from one Telegram workflow to these channels today.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {platforms.map(({ name, icon: Icon }) => (
+                <article
+                  key={name}
+                  className="group rounded-2xl border border-[#1d202b22] bg-white px-4 py-4 transition hover:-translate-y-1 hover:border-[#1d202b66]"
+                >
+                  <div className="mb-3 inline-flex rounded-xl border border-[#1d202b22] bg-[#f0eedd] p-3">
+                    <Icon className="text-xl text-[#1d202b]" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-semibold">{name}</h3>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="glass-card p-6 md:p-8">
+            <h2 className="display text-2xl">Coming Soon</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#313542] md:text-base">
+              More social destinations and advanced automation hooks are on the
+              roadmap as we roll out.
+            </p>
+            <div className="mt-5 rounded-2xl border border-dashed border-[#1d202b44] bg-white p-4 text-sm">
+              Next up: broader channel support, richer scheduling windows, and
+              smarter publishing templates.
+            </div>
+          </div>
+        </section>
+
+        <section className="glass-card p-6 md:p-8">
+          <h2 className="display text-2xl md:text-3xl">Why teams pick this</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {valueItems.map(({ title, description, icon: Icon }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-[#1d202b22] bg-white p-5 transition hover:-translate-y-1 hover:shadow-[0_16px_34px_-24px_#1e223099]"
+              >
+                <span className="mb-3 inline-flex rounded-xl border border-[#1d202b22] bg-[#f0eedd] p-2.5">
+                  <Icon className="text-lg text-[#1d202b]" aria-hidden="true" />
+                </span>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#313542]">
+                  {description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="glass-card p-6 text-center md:p-10">
+          <h2 className="display text-3xl md:text-4xl">
+            Launch with consistent social output, not context switching
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#313542] md:text-base">
+            We are in launch mode and accepting early users now.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={WAITLIST_URL}
             target="_blank"
             rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#1d202b] bg-[#ec5d2a] px-7 py-3 text-sm font-semibold text-[#111318] transition hover:-translate-y-0.5 hover:bg-[#ffc05f]"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Join Waitlist <FaArrowRight aria-hidden="true" />
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
       </main>
     </div>
   );

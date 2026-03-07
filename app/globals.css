@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f5ef;
+  --foreground: #111318;
+  --surface: #ffffff;
+  --surface-muted: #f0eedd;
+  --line: #1e2230;
+  --line-soft: #1e223026;
+  --brand: #ec5d2a;
+  --brand-soft: #ffc05f;
+  --aura: #7de2d1;
+  --shadow-main: 0 22px 48px -28px #10142466;
+  --radius-xl: 1.75rem;
 }
-
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* * {
+  box-sizing: border-box;
+} */
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 90% -10%, #ffd1a6 0%, #f6f5ef 36%),
+    radial-gradient(circle at 0% 70%, #c9fff633 0%, #f6f5ef 46%),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.landing-grid {
+  position: relative;
+}
+
+.landing-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at center, black 10%, transparent 78%);
+  opacity: 0.6;
+}
+
+.shell {
+  width: min(1160px, calc(100% - 2.25rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.glass-card {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklab, var(--surface) 86%, #fff0 14%);
+  box-shadow: var(--shadow-main);
+  backdrop-filter: blur(12px);
+}
+
+.display {
+  font-family: var(--font-display), "Trebuchet MS", sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise-in 0.7s ease forwards;
+}
+
+.reveal[data-delay="1"] {
+  animation-delay: 0.1s;
+}
+
+.reveal[data-delay="2"] {
+  animation-delay: 0.2s;
+}
+
+.reveal[data-delay="3"] {
+  animation-delay: 0.3s;
+}
+
+.float-hero {
+  animation: drift 6.2s ease-in-out infinite;
+}
+
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .float-hero {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }
