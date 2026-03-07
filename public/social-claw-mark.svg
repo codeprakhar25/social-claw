@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Social Claw icon">
+  <defs>
+    <linearGradient id="sc-g" x1="8" y1="12" x2="120" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ec5d2a"/>
+      <stop offset="1" stop-color="#ffc05f"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="#111318"/>
+  <path d="M33 64C33 47.431 46.431 34 63 34h15v15H63c-8.284 0-15 6.716-15 15s6.716 15 15 15h8v15h-8c-16.569 0-30-13.431-30-30Z" fill="url(#sc-g)"/>
+  <path d="M82 34h13l-9 18c8.279 3.688 14 12.003 14 21.65C100 87.1 89.1 98 75.65 98H58V83h17.65C81.367 83 86 78.367 86 72.65c0-5.716-4.633-10.35-10.35-10.35H61l21-28.3Z" fill="url(#sc-g)"/>
+</svg>

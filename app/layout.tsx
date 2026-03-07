@@ -13,9 +13,14 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "OpenClaw Social Manager | Launching Soon",
+  title: "Social Claw | Telegram Social Media Manager",
   description:
-    "Control social media posting from Telegram with OpenClaw. Join the waitlist for launch updates.",
+    "Control social media posting from Telegram with OpenClaw. Manage X, LinkedIn, Reddit, Instagram, and Facebook from one chat flow.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

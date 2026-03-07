@@ -1,5 +1,6 @@
+'use cache'
+
 import Image from "next/image";
-import Link from "next/link";
 import {
   FaArrowRight,
   FaBoltLightning,
@@ -44,13 +45,24 @@ const valueItems = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="landing-grid min-h-screen py-8 md:py-12">
       <main className="shell space-y-10 md:space-y-16">
         <section className="glass-card overflow-hidden p-7 md:p-12">
           <div className="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
             <div className="space-y-6">
+              <div className="reveal inline-flex w-fit items-center gap-2 rounded-full border border-[#1e223033] bg-white px-3 py-2">
+                <Image
+                  src="/social-claw-mark.svg"
+                  alt="Social Claw logo"
+                  width={24}
+                  height={24}
+                />
+                <span className="display text-sm font-semibold tracking-wide">
+                  Social Claw
+                </span>
+              </div>
               <p className="reveal inline-flex w-fit items-center rounded-full border border-[#1e223033] bg-[#fff6e8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.17em] text-[#313542]">
                 Launching Soon
               </p>
@@ -69,7 +81,8 @@ export default function Home() {
                 <a
                   href={WAITLIST_URL}
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#1d202b] bg-[#1d202b] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#ec5d2a]"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#1d202b] bg-white px-6 py-3 text-sm font-semibold text-[#1d202b] transition hover:-translate-y-0.5 hover:bg-[#ec5d2a]"
                 >
                   Join Waitlist <FaArrowRight aria-hidden="true" />
                 </a>
