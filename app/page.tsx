@@ -13,8 +13,8 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 
-const WAITLIST_URL = "https://tally.so/r/waitlist-placeholder";
-const DEMO_EMBED_URL = "https://www.youtube.com/embed/ysz5S6PUM-U";
+const WAITLIST_URL = "https://form.typeform.com/to/XwHNQMkD";
+const DEMO_EMBED_URL = "https://www.youtube.com/embed/s4gznPnVL-4";
 
 const platforms = [
   { name: "X (Twitter)", icon: FaXTwitter },
@@ -115,9 +115,9 @@ export default async function Home() {
         <section id="demo" className="glass-card p-5 md:p-8">
           <div className="mb-5 flex items-center justify-between gap-4">
             <h2 className="display text-2xl md:text-3xl">Demo Showcase</h2>
-            <span className="rounded-full border border-[#1d202b33] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">
-              Placeholder Embed
-            </span>
+            {/* <span className="rounded-full border border-[#1d202b33] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">
+               Placeholder Embed
+             </span> */}
           </div>
           <div className="relative overflow-hidden rounded-2xl border border-[#1d202b22] bg-black">
             <div className="aspect-video w-full">
