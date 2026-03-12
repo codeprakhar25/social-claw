@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa6";
 
 const WAITLIST_URL = "https://form.typeform.com/to/XwHNQMkD";
-const DEMO_EMBED_URL = "https://www.youtube.com/embed/s4gznPnVL-4";
+const DEMO_EMBED_URL = "https://www.youtube.com/embed/2IuAClQlLak"; // https://www.youtube.com/watch?v=2IuAClQlLak
 
 const platforms = [
   { name: "X (Twitter)", icon: FaXTwitter },
